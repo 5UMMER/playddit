@@ -11,6 +11,8 @@ public interface IUsersService {
 	public String selectById(String user_id);
 	
 	// 팔로잉 목록 출력
-	public UsersVO followingList(String user_id); 
+	public List<UsersVO> followingList(String user_id); 
 	
+	// 아이디 비밀번호 일치여부
+	public UsersVO match(String user_id);
 }

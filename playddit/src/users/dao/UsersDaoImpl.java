@@ -53,14 +53,25 @@ public class UsersDaoImpl implements IUsersDao {
 	/**
 	 * 팔로잉 목록 출력
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public UsersVO followingList(String user_id) throws SQLException {
-		UsersVO following = null;
+	public List<UsersVO> followingList(String user_id) throws SQLException {
+		List<UsersVO> following = null;
 		
 		// sql문의 수행 결과를 리턴받음
-		following = (UsersVO) client.queryForObject("users.followingList", user_id);
+		following = (List<UsersVO>) client.queryForList("users.followingList", user_id);
 		
 		return following;
+	}
+
+	/**
+	 * 아이디 비밀번호 일치여부
+	 */
+	@Override
+	public UsersVO match(String user_id) throws SQLException {
+		UsersVO vo = null;
+		vo = (UsersVO) client.queryForObject("users.match", user_id);
+		return vo;
 	}
 
 }
