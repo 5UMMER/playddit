@@ -4,6 +4,7 @@
 <%
 	// 저장된 값 가져오기
 	UsersVO vo = (UsersVO)request.getAttribute("following");
+
 %>
 
 

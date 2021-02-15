@@ -43,7 +43,7 @@
 		
 		$(function(){
 			$('#flbtn').on('click', function(){
-				followingList = $('#followingList').val();
+				followingList = $('#followingList').val().trim();
 				
 				if(followingList.length < 1){
 					$('#flspan').html("팔로잉한 친구가 없어요. 지금 친구를 검색해 팔로잉 해보세요.");
@@ -55,7 +55,7 @@
 					type : 'post',
 					data : { 'user_id' : followingList},
 					success : function(res){
-						
+						console.log("res.id");
 						code = "<table>";
 						code += "<tr><td>아이디</td><td>이름</td><td>닉네임</td></tr>";
 						code += "<tr><td>" + res.id +"</td></tr>";
