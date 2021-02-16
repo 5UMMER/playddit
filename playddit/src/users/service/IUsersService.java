@@ -14,5 +14,5 @@ public interface IUsersService {
 	public List<UsersVO> followingList(String user_id); 
 	
 	// 아이디 비밀번호 일치여부
-	public UsersVO match(String user_id);
+	public UsersVO match(String user_id, String user_pw);
 }

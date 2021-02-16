@@ -64,7 +64,7 @@ function idPassCheck(){
 				 'user_pw' : pwvalue },
 		success : function(res){
 			code = "아이디 : " + res.id;	
-			code += "비밀번호 : " + res.pw;
+			code += "닉네임 : " + res.nickname;
 			
 			$('#idPassSpan').html(code);
 		},
